@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+  <link rel="stylesheet" href="indexTheme.css" type="text/css"/>
+    <style>
+  p::first-line {
+        color: rgb(20, 50, 68);
+        font-family:Lucida Handwriting;
+        font-size: 300%;
+    }
+
+ body {
+  background-image: url('images/Capture.PNG');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%100%;
+}
+
+h1 {
+ text-align:center;
+ font-size: 350%;
+ color: rgb(20, 50, 68);
+}
+
+#collection {
+    color: rgb(20, 50, 68);
+    font-family:Lucida Handwriting;
+    font-size: 300%;
+    text-decoration: none;
+    position: sticky;
+    width: 100%;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -1cm;
+    }
+
+    </style>
+</head>
+
+<body>
+
+    <h1 style="font-family:Copperplate Gothic Bold">Eva's Library</h1>
+  
+    <script src = 'EvaLibrary/Index.js'> </script>
+
+  <div class="img__wrap1">
+    <img class="img__img" src="transp.PNG"  />
+    <div class="dropdown_div">
+        <p class="img__description" style="text-align: center;">Browse the Collection</p>
+        <div class="dropdown_content">
+          <a href="#">Browse by Title</a>
+          <a href="#">Browse by Author</a>
+          <a href="#">Browse by Publisher</a>
+          <a href="#">Browse Entire Collection</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="img__wrap2">
+    <img class="img__img" src="images/transp.PNG" />
+    <a id="collection" class="img__description" style="text-align: center" HREF = http://127.0.0.1:5500/EvaLibrary/addBooks.html>Add to the Collection</a>
+  </div>
+ 
+</body>
+</html>
