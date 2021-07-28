@@ -1,15 +1,16 @@
 "use strict";
 
 (function() {
-    const test = () => {
+    // const test = () => {
     const updateTitle = document.querySelector("#updateTitle");
     const updateAuthor = document.querySelector("#updateAuthor");
     const updatePublisher = document.querySelector("#updatePublisher");
-    }
+    // }
     const data1 = {
-        title: 'James and the Giant Peach',
-        author: 'Roald Dahl',
-        publisher: 'PubNow'
+        id: 0,
+        title: updateTitle.value,
+        author: updateAuthor.value,
+        publisher: updatePublisher.value
     }
 
 console.log(data1);
@@ -67,7 +68,12 @@ const renderBook = (book, outputDiv) => {
     const updateButton = document.createElement('button');
     updateButton.innerText = "UPDATE";
     updateButton.classList.add("btn", "btn-primary");
-    updateButton.addEventListener('click', () => updateBook(book.id, book));
+    updateButton.addEventListener('click', () => {
+        data1.id=book.id,
+        updateAuthor.value = book.author,
+        updateTitle.value = book.title,
+        updatePublisher.value = book.publisher
+    });
 
     newBook.appendChild(updateButton);
 
@@ -78,8 +84,14 @@ const renderBook = (book, outputDiv) => {
     outputDiv.appendChild(bookColumn);
 }
 
-    const updateBook = id => {
-        axios.put(`${baseURL}/updateBook/${id}`, data1)
+    document.querySelector('#updateBook>form').addEventListener('submit',  (e) => {
+        e.preventDefault();
+        const data = {
+        author: updateAuthor.value,
+        title: updateTitle.value,
+        publisher: updatePublisher.value
+        }
+        axios.put(`${baseURL}/updateBook/${data1.id}`, data)
             .then(res => {
                 console.log(updateTitle);
                 const book = res.data;
@@ -90,9 +102,9 @@ const renderBook = (book, outputDiv) => {
             }).catch(err => console.log(err));
         
             const updateForm = document.querySelector("section#updateBook > form");
-
+            getAllBooks();
         }
-    
+    )
 const deleteBook = id => {
     axios.delete(`${baseURL}/deleteBook/${id}`)
         .then(res => {
