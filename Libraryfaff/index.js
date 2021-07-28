@@ -1,11 +1,18 @@
 "use strict";
 
 (function() {
+    const test = () => {
+    const updateTitle = document.querySelector("#updateTitle");
+    const updateAuthor = document.querySelector("#updateAuthor");
+    const updatePublisher = document.querySelector("#updatePublisher");
+    }
+    const data1 = {
+        title: 'James and the Giant Peach',
+        author: 'Roald Dahl',
+        publisher: 'PubNow'
+    }
 
-    const updateTitle = document.querySelector("#updateTitle").value;
-    const updateAuthor = document.querySelector("#updateAuthor").value;
-    const updatePublisher = document.querySelector("#updatePublisher").value;
-
+console.log(data1);
 const baseURL = "http://localhost:8080";
 
 const getAllOutput = document.querySelector("#getAllOutput");
@@ -72,7 +79,7 @@ const renderBook = (book, outputDiv) => {
 }
 
     const updateBook = id => {
-        axios.put(`${baseURL}/updateBook/${id}`, updateTitle, updateAuthor, updatePublisher)
+        axios.put(`${baseURL}/updateBook/${id}`, data1)
             .then(res => {
                 console.log(updateTitle);
                 const book = res.data;
