@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="shortcut icon" href="#">
     <title>Donations</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <style>
@@ -150,24 +154,24 @@
       <div class="left-part">
         <i class="fa fa-book" aria-hidden="true"></i>
         <h1>Thank you for your donation!</h1>
-        <i>Eva's library runs on the kind donations of friends and family, as well as Eva's incapability to stop buying things she doesn't need.</i>
+        <i>Eva's library runs on the kind donations of friends and family, as well as Eva's inability to stop buying things she doesn't need.</i>
         <div class="btn-group">
           <a class="btn-item" href="http://127.0.0.1:5500/EvaLibrary/Index.html">Back to Home</a>
         </div>
       </div>
-      <form action="/">
-        <div class="title">
-          <h2>Tell me about your book!</h2>
-        </div>
-        <div class="bookInfo">
-          <input type="text" name="name" placeholder="Title" style="width: 500px">
-          <br>
-          <input type="text" name="name" placeholder="Author" style="width: 500px">
-          <br>
-          <input type="text" name="name" placeholder="Publisher" style="width: 500px">
-        </div>
-        <button type="submit" href="#">Submit</button>
-      </form>
+      <section id="postSection" class="col-3">
+        <form>
+            <input type="text" id="bookTitle" name="title" placeholder="Title" style="width: 500px" class="form-control" required>
+            <br>
+            <input type="text" id="bookAuthor" name="author" placeholder="Author" style="width: 500px" class="form-control" required>
+            <br>
+            <input type="text" id="bookPublisher" name="publisher" placeholder="Publisher" style="width: 500px" class="form-control" required>
+
+            <button type="reset" class="btn btn-primary">Reset</button>
+            <button id="addBookButton" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </section>
     </div>
   </body>
+  <script src="JS/addBooks.js"></script>
 </html>

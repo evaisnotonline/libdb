@@ -1,0 +1,40 @@
+.table {
+   background-color: rgba(240, 248, 255); 
+}
+
+#getAllOutput {
+    background-color: rgba(240, 248, 255, 0.733);
+}
+
+#headings {
+    background-color: rgba(240, 248, 255, 0.833);
+    text-align: center;
+    font-family: Lucida Handwriting;
+    font-size: 40pt;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+
+#buttoning {
+        background: #755f5f; 
+        text-decoration: none;
+        font-size: 15px;
+        color: #fff;
+        text-align: center;
+        width: 10%;
+        margin-bottom: 3%;
+}
+
+#leftSection {
+    overflow:hidden;
+}
+#rightSection {
+    width:220px;
+    margin-left:30px;
+    float:right;
+    margin-top: 20%;
+    margin-bottom: 100%;
+    background-color: aliceblue;
+}
